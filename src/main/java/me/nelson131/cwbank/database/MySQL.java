@@ -33,6 +33,11 @@ public class MySQL {
         statement.executeUpdate(query);
     }
 
+    public static void deleteAccount(Long id) throws SQLException {
+        String query = "DELETE FROM users WHERE id = " + id + ";";
+        statement.executeUpdate(query);
+    }
+
     public static int getBalance(Long id) throws SQLException {
         String query = "SELECT * FROM users WHERE id=" + id + ";";
         resultSet = statement.executeQuery(query);

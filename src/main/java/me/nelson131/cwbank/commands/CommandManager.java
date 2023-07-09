@@ -22,6 +22,7 @@ public class CommandManager extends ListenerAdapter {
         commandDataList.add(Commands.slash("transfer", "Transfer your diamonds to another account")
                 .addOption(OptionType.STRING, "discord-id", "To whom?")
                 .addOption(OptionType.INTEGER, "amount", "How many?"));
+        commandDataList.add(Commands.slash("delete", "Delete your account"));
         event.getGuild().updateCommands().addCommands(commandDataList).queue();
     }
 }

@@ -93,4 +93,20 @@ public class MessageBuilder {
         ed.setDescription(getCFG("al-acc-desc"));
         return ed.build();
     }
+
+    public static MessageEmbed deleteMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(main);
+        ed.setTitle(getCFG("delete-title"));
+        ed.setDescription(getCFG("delete-desc"));
+        return ed.build();
+    }
+
+    public static MessageEmbed deleteNotifyMessage(){
+        EmbedBuilder ed  = new EmbedBuilder();
+        ed.setColor(main);
+        ed.setTitle(getCFG("del-notify-title"));
+        ed.setDescription(getCFG("del-notify-desc"));
+        return ed.build();
+    }
 }

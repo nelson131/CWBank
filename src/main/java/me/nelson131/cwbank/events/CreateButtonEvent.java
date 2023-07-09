@@ -3,7 +3,6 @@ package me.nelson131.cwbank.events;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.concrete.Category;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
@@ -15,6 +14,8 @@ import java.util.EnumSet;
 import static me.nelson131.cwbank.database.MySQL.*;
 import static me.nelson131.cwbank.utils.MessageBuilder.*;
 import static me.nelson131.cwbank.utils.Properties.getCFG;
+import static me.nelson131.cwbank.utils.Roles.addRole;
+import static me.nelson131.cwbank.utils.Roles.getRole;
 
 public class CreateButtonEvent extends ListenerAdapter {
 
@@ -47,15 +48,5 @@ public class CreateButtonEvent extends ListenerAdapter {
                 event.replyEmbeds(alreadyHaveAccount()).setEphemeral(true).queue();
             }
         }
-    }
-
-    public static void addRole(String id, Member member, Guild guild){
-        Role role = guild.getRoleById(id);
-        guild.addRoleToMember(member, role).queue();
-    }
-
-    public static boolean getRole(String id, Member member, Guild guild){
-        Role role = guild.getRoleById(id);
-        return  member.getRoles().contains(role);
     }
 }
