@@ -3,6 +3,7 @@ package me.nelson131.cwbank.utils;
 import me.nelson131.cwbank.database.MySQL;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.Role;
 
 import java.awt.*;
 import java.sql.SQLException;
@@ -109,4 +110,27 @@ public class MessageBuilder {
         ed.setDescription(getCFG("del-notify-desc"));
         return ed.build();
     }
+
+    public static MessageEmbed depositMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(main);
+        ed.setTitle(getCFG("deposit-title"));
+        return ed.build();
+    }
+
+    public static MessageEmbed negativeDepositMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(problem);
+        ed.setTitle(getCFG("neg-dep-title"));
+        ed.setDescription(getCFG("neg-dep-desc"));
+        return ed.build();
+    }
+
+//    public static MessageEmbed positiveDeposit(int amount){
+//        EmbedBuilder ed = new EmbedBuilder();
+//        ed.setColor(main);
+//        ed.setTitle(getCFG("pos-dep-title"));
+//        ed.setDescription(getCFG("pos-dep-desc") + " " + amount);
+//        return ed.build();
+//    }
 }

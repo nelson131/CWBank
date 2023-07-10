@@ -23,7 +23,6 @@ public class Transfer extends ListenerAdapter {
 
                 if (event.getOption("discord-id") == null && event.getOption("amount") == null) {
                     event.replyEmbeds(negativeTransferMessage()).queue();
-                    System.out.println("null");
                     return;
                 }
 

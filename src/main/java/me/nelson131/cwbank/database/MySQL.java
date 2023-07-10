@@ -50,6 +50,13 @@ public class MySQL {
         statement.executeUpdate(query);
     }
 
+    public static void depositBalance(Long id, int amount) throws SQLException {
+        int bal = getBalance(id);
+        int total = bal + amount;
+        String query = "UPDATE users SET balance = " + total + " WHERE id = " + id;
+        statement.executeUpdate(query);
+    }
+
     public static boolean checkTransferOption(Long getterId, Long senderId, int amount) throws SQLException {
         String getterQuery = "SELECT * FROM users WHERE id = " + getterId + ";";
         String senderQuery = "SELECT * FROM users WHERE id = " + senderId + ";";

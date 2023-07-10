@@ -23,6 +23,11 @@ public class CommandManager extends ListenerAdapter {
                 .addOption(OptionType.STRING, "discord-id", "To whom?")
                 .addOption(OptionType.INTEGER, "amount", "How many?"));
         commandDataList.add(Commands.slash("delete", "Delete your account"));
+        commandDataList.add(Commands.slash("deposit", "Deposit your money on your account"));
+        commandDataList.add(Commands.slash("realdeposit", "Deposit really cash on other account (for staff)")
+                .addOption(OptionType.STRING, "discord-id", "To whom?")
+                .addOption(OptionType.INTEGER, "amount", "How many?")
+                .setDefaultPermissions(DefaultMemberPermissions.DISABLED));
         event.getGuild().updateCommands().addCommands(commandDataList).queue();
     }
 }
