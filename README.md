@@ -6,3 +6,4 @@ currently ready commands:
 /transfer
 /delete
 /deposit /realdeposit
+/withdraw /realwithdraw
