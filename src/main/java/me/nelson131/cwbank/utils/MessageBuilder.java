@@ -126,11 +126,25 @@ public class MessageBuilder {
         return ed.build();
     }
 
-//    public static MessageEmbed positiveDeposit(int amount){
-//        EmbedBuilder ed = new EmbedBuilder();
-//        ed.setColor(main);
-//        ed.setTitle(getCFG("pos-dep-title"));
-//        ed.setDescription(getCFG("pos-dep-desc") + " " + amount);
-//        return ed.build();
-//    }
+    public static MessageEmbed withdrawMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(main);
+        ed.setTitle(getCFG("withdraw-title"));
+        return ed.build();
+    }
+
+    public static MessageEmbed negativeWithdrawMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(problem);
+        ed.setTitle(getCFG("neg-with-title"));
+        ed.setDescription(getCFG("neg-with-desc"));
+        return ed.build();
+    }
+
+    public static MessageEmbed bigAmountMessage(){
+        EmbedBuilder ed = new EmbedBuilder();
+        ed.setColor(problem);
+        ed.setTitle(getCFG("big-amount"));
+        return ed.build();
+    }
 }

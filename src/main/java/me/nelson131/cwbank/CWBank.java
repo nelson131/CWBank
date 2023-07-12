@@ -2,11 +2,9 @@ package me.nelson131.cwbank;
 
 import me.nelson131.cwbank.commands.WelcomeMessageCommand;
 import me.nelson131.cwbank.commands.CommandManager;
-import me.nelson131.cwbank.commands.functions.Balance;
-import me.nelson131.cwbank.commands.functions.Delete;
-import me.nelson131.cwbank.commands.functions.Deposit;
-import me.nelson131.cwbank.commands.functions.Transfer;
+import me.nelson131.cwbank.commands.functions.*;
 import me.nelson131.cwbank.commands.functions.staff.RealDeposit;
+import me.nelson131.cwbank.commands.functions.staff.RealWithdraw;
 import me.nelson131.cwbank.events.CreateButtonEvent;
 import me.nelson131.cwbank.events.DeleteButtonEvent;
 import net.dv8tion.jda.api.JDA;
@@ -31,7 +29,7 @@ public class CWBank {
         jda = JDABuilder.createDefault(getCFG("bot-token"))
                 .setActivity(Activity.playing(getCFG("activity-playing")))
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)
-                .addEventListeners(new WelcomeMessageCommand(), new CommandManager(), new CreateButtonEvent(), new Balance(), new Transfer(), new Delete(), new DeleteButtonEvent(), new Deposit(), new RealDeposit())
+                .addEventListeners(new WelcomeMessageCommand(), new CommandManager(), new CreateButtonEvent(), new Balance(), new Transfer(), new Delete(), new DeleteButtonEvent(), new Deposit(), new RealDeposit(), new Withdraw(), new RealWithdraw())
                 .build();
 
         jda.awaitReady();

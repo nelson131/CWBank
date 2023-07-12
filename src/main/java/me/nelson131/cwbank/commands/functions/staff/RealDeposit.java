@@ -41,7 +41,6 @@ public class RealDeposit extends ListenerAdapter {
 
                 else {
                     try {
-                        User user = guild.getJDA().getUserById(id);
                         depositBalance(id, amount);
                         event.reply(getCFG("accept-deposit")).queue();
 
